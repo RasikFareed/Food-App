@@ -11,7 +11,7 @@ public class MenuDao {
 
 	public void save(Menu menu) {
 
-		String sql = "insert into menu(id,name) values(?,?)";
+		String sql = "insert into FoodApp(id,name) values(?,?)";
 		Object[] params = { menu.getId(), menu.getName() };
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows inserted: " + rows);
@@ -20,7 +20,7 @@ public class MenuDao {
 
 	public void update(Menu menu) {
 
-		String sql = "update menu set name=? where id=?";
+		String sql = "update FoodApp set name=? where id=?";
 		Object[] params = { menu.getName(), menu.getId() };
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows updated: " + rows);
@@ -29,7 +29,7 @@ public class MenuDao {
 
 	public void delete(int id) {
 
-		String sql = "delete from menu where id=?";
+		String sql = "delete from FoodApp where id=?";
 		Object[] params = { id };
 		int rows = jdbcTemplate.update(sql, params);
 		System.out.println("No of rows deleted: " + rows);
